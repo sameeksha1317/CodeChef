@@ -1,0 +1,65 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		try{
+	      Scanner scan=new Scanner(System.in);
+	      int test=scan.nextInt();
+	      for(int i=0;i<test;i++){
+	          int b=scan.nextInt();
+	          int[] arr=new int[b];
+	          for(int j=0;j<b;j++){
+	              arr[j]=scan.nextInt();
+	          }
+	          Arrays.sort(arr);
+	          if(b==1){
+	        	  if(arr[0]==0) {
+	        		  System.out.println("draw");
+	        	  }else {
+	        		  System.out.println("first");
+	        	  }
+	            
+	          }else if(b==2){
+	        	  if(arr[0]==arr[1]) {
+	        		  System.out.println("draw");
+	          }else {
+	        	  System.out.println("first");
+	          }
+	          }else if(b==3) {
+	              if(arr[b-1]>arr[b-2]+arr[b-3])     System.out.println("first");
+	              else if(arr[b-1]==arr[b-2]+arr[b-3]) System.out.println("draw");
+	              else System.out.println("second");
+	          }else{
+	              long sum1=0,sum2=0;
+	              sum1+=arr[b-1];
+	              sum2+=arr[b-2]+arr[b-3];
+	              if(b%2!=0){
+	              for(int k=b-4;k>=0;k--){
+	                  if(k%2==0)sum2+=arr[k];
+	                  else sum1+=arr[k];
+	              }
+	              }else{
+	                   for(int k=b-4;k>=0;k--){
+	                  if(k%2==0)sum1+=arr[k];
+	                  else sum2+=arr[k];
+	              }
+	              }
+	             if(sum1<sum2)    System.out.println("second");
+	             else if(sum1>sum2)     System.out.println("first");
+	             else     System.out.println("draw");
+	          }
+	          
+	      }
+	  }catch(Exception e) {
+		  return;
+	}
+	}
+}
