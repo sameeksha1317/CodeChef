@@ -1,0 +1,38 @@
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class priya_and_And
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		try{
+		    Scanner scan=new Scanner(System.in);
+		    int test=scan.nextInt();
+		    for(int i=0;i<test;i++){
+		        int a=scan.nextInt();
+		        int[] arr=new int[a];
+		        for(int j=0;j<a;j++){
+		            arr[j]=scan.nextInt();
+		            
+		        }
+		        int sum=0;
+		        for(int j=0;j<a;j++){
+		            for(int k=j+1;k<a;k++){
+		                if(arr[j]==(arr[j]&arr[k])){
+		                    sum++;
+		                }
+		            }
+		        }
+		        System.out.println(sum);
+		    }
+		}catch(Exception e) {
+			return;
+		}
+	}
+}
